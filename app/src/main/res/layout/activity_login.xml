@@ -22,6 +22,7 @@
         android:textSize="36sp"
         android:textStyle="bold"
         android:textColor="@android:color/white"
+        android:fontFamily="@font/canavar"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="200dp" />
 
