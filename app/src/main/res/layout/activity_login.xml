@@ -3,16 +3,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <!-- Log In Text -->
+
     <ImageView
         android:id="@+id/loginBackground"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:scaleType="centerCrop"
-        android:src="@drawable/loginbackground"
+        android:alpha="0.8"
         android:contentDescription="@string/login_background_desc"
-        android:alpha="0.8"/>
+        android:scaleType="centerCrop"
+        android:src="@drawable/loginbackground" />
 
-    <!-- Log In Text -->
     <TextView
         android:id="@+id/login_title"
         android:layout_width="wrap_content"
@@ -25,32 +26,41 @@
         android:layout_marginTop="200dp" />
 
     <!-- USN -->
-    <EditText
-        android:id="@+id/username_input"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="USN"
-        android:background="@drawable/rounded_edittext"
-        android:padding="12dp"
-        android:layout_below="@id/login_title"
-        android:layout_marginTop="30dp"
-        android:textColor="@android:color/white"
-        android:textColorHint="@android:color/darker_gray"
-        android:inputType="text" />
+
 
     <!-- OTP -->
+
+    <EditText
+        android:id="@+id/username_input"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_below="@id/login_title"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/rounded_edittext"
+        android:hint="USN"
+        android:inputType="text"
+        android:padding="12dp"
+        android:paddingLeft="40dp"
+        android:paddingRight="40dp"
+        android:textColor="@android:color/white"
+        android:textColorHint="@android:color/darker_gray" />
+
     <EditText
         android:id="@+id/otp_input"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="OTP"
-        android:background="@drawable/rounded_edittext"
-        android:padding="12dp"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
         android:layout_below="@id/username_input"
         android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/rounded_edittext"
+        android:hint="OTP"
+        android:inputType="number"
+        android:padding="12dp"
+        android:paddingLeft="40dp"
+        android:paddingRight="40dp"
         android:textColor="@android:color/white"
-        android:textColorHint="@android:color/darker_gray"
-        android:inputType="number" />
+        android:textColorHint="@android:color/darker_gray" />
 
     <!-- reCAPTCHA Placeholder -->
     <FrameLayout
@@ -63,10 +73,11 @@
     <!-- Send OTP -->
     <Button
         android:id="@+id/send_otp_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
         android:text="SEND OTP"
-        android:backgroundTint="@color/blue"
+        android:background="@drawable/ripple_effect"
         android:textColor="@android:color/white"
         android:layout_below="@id/recaptcha_placeholder"
         android:layout_marginTop="30dp" />
