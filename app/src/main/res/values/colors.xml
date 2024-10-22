@@ -10,5 +10,5 @@
     <color name="blue">#2196F3</color>
     <color name="button_default">#E60885</color>
     <color name="button_pressed">#FF5722</color>
-
+    <color name="login_grey">#121212</color>
 </resources>

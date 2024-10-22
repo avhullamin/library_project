@@ -6,31 +6,23 @@
     <!-- Log In Text -->
 
     <ImageView
-        android:id="@+id/loginBackground"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:alpha="0.8"
-        android:contentDescription="@string/login_background_desc"
-        android:scaleType="centerCrop"
-        android:src="@drawable/loginbackground" />
+        android:background="@color/login_grey" />
 
     <TextView
         android:id="@+id/login_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="LOG IN"
+        android:text="LOGIN"
         android:textSize="36sp"
         android:textStyle="bold"
         android:textColor="@android:color/white"
-        android:fontFamily="@font/canavar"
+        android:fontFamily="@font/lilg"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="200dp" />
 
     <!-- USN -->
-
-
-    <!-- OTP -->
-
     <EditText
         android:id="@+id/username_input"
         android:layout_width="300dp"
@@ -47,6 +39,7 @@
         android:textColor="@android:color/white"
         android:textColorHint="@android:color/darker_gray" />
 
+    <!-- OTP -->
     <EditText
         android:id="@+id/otp_input"
         android:layout_width="300dp"
@@ -80,6 +73,18 @@
         android:text="SEND OTP"
         android:background="@drawable/ripple_effect"
         android:textColor="@android:color/white"
+        android:fontFamily="@font/lilg"
         android:layout_below="@id/recaptcha_placeholder"
         android:layout_marginTop="30dp" />
+
+    <ImageView
+        android:id="@+id/loginBackground"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="100dp"
+        android:layout_centerHorizontal="true"
+        android:radius="100dp"
+        android:alpha="0.8"
+        android:scaleType="centerCrop"
+        android:src="@drawable/app_icon" />
 </RelativeLayout>
