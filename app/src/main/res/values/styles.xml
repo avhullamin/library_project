@@ -4,5 +4,8 @@
         <!-- Customize your theme here -->
         <item name="android:windowFullscreen">true</item>
     </style>
-
+    <style name="RoundedImage">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">23dp</item> <!-- Adjust corner size as needed -->
+    </style>
 </resources>
