@@ -42,7 +42,10 @@ public class LoginPage extends AppCompatActivity {
                 // Send the OTP via email
                 sendEmail();
                 Toast.makeText(LoginPage.this, "OTP sent to your email!", Toast.LENGTH_SHORT).show();
-                verifyOtpButton.setVisibility(View.VISIBLE); // Show Verify OTP button
+
+                // Change SEND OTP to VERIFY OTP and make it visible
+                sendOtpButton.setVisibility(View.GONE); // Hide SEND OTP button
+                verifyOtpButton.setVisibility(View.VISIBLE); // Show VERIFY OTP button
             }
         });
 
