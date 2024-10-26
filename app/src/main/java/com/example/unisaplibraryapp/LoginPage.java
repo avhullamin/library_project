@@ -74,7 +74,7 @@ public class LoginPage extends AppCompatActivity {
             public void run() {
                 try {
                     GmailSender sender = new GmailSender(appEmail, appPassword);
-                    sender.sendMail("abhisheksaini642794@gmail.com", "Welcome To The Unisap Library App", "Your One Time Password is: " + randomNumber);
+                    sender.sendMail("abhisheksaini642794@gmail.com", "Welcome To The UNISAP Library App", "Your One Time Password is: " + randomNumber);
                 } catch (MessagingException e) {
                     e.printStackTrace();
                 }
