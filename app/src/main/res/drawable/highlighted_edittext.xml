@@ -1,0 +1,14 @@
+<!-- res/drawable/highlighted_edittext.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Background color -->
+    <solid android:color="@android:color/transparent" />
+
+    <!-- Rounded corners -->
+    <corners android:radius="12dp" />
+
+    <!-- Border color and width -->
+    <stroke
+        android:width="2dp"
+        android:color="@color/white" /> <!-- Set this to the color you want for highlighting -->
+</shape>
+

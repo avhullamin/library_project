@@ -31,14 +31,16 @@
         android:layout_below="@id/login_title"
         android:layout_marginTop="20dp"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/rounded_edittext"
-        android:hint="USN"
+        android:background="@drawable/highlighted_edittext"
+        android:hint="Enter USN"
         android:inputType="text"
+        android:textStyle="bold"
         android:padding="12dp"
         android:paddingLeft="40dp"
         android:paddingRight="40dp"
         android:textColor="@android:color/white"
         android:textColorHint="@android:color/darker_gray" />
+
 
     <!-- OTP -->
     <EditText
@@ -48,14 +50,16 @@
         android:layout_below="@id/username_input"
         android:layout_marginTop="20dp"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/rounded_edittext"
-        android:hint="OTP"
+        android:background="@drawable/highlighted_edittext"
+        android:hint="Enter OTP"
+        android:textStyle="bold"
         android:inputType="number"
         android:padding="12dp"
         android:paddingLeft="40dp"
         android:paddingRight="40dp"
         android:textColor="@android:color/white"
         android:textColorHint="@android:color/darker_gray" />
+
 
     <!-- reCAPTCHA Placeholder -->
     <FrameLayout
