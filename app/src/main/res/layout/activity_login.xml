@@ -66,6 +66,7 @@
         android:layout_marginTop="20dp" />
 
     <!-- Send OTP -->
+    <!-- Send OTP -->
     <Button
         android:id="@+id/send_otp_button"
         android:layout_width="300dp"
@@ -77,6 +78,21 @@
         android:fontFamily="@font/lilg"
         android:layout_below="@id/recaptcha_placeholder"
         android:layout_marginTop="30dp" />
+
+    <!-- Verify OTP -->
+    <Button
+        android:id="@+id/verify_otp_button"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_centerHorizontal="true"
+        android:text="VERIFY OTP"
+        android:background="@drawable/ripple_effect"
+        android:textColor="@android:color/white"
+        android:fontFamily="@font/lilg"
+        android:layout_below="@id/send_otp_button"
+        android:layout_marginTop="20dp"
+        android:visibility="gone" /> <!-- Initially hidden -->
+
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/loginBackground"
