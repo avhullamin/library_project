@@ -16,9 +16,9 @@ public class LoginPage extends AppCompatActivity {
 
     private EditText otpInput;
     private Button sendOtpButton;
-    private Button verifyOtpButton; // New button for verifying OTP
-    private final String appEmail = "abhisheksaini5656000@gmail.com"; // Your Gmail address
-    private final String appPassword = "suib vadt aehn wtmh"; // Your App Password
+    private Button verifyOtpButton;
+    private final String appEmail = "unisap.library.app@gmail.com";
+    private final String appPassword = "Indw uocy nshz vqfn";
 
     private final int randomNumber = 100000 + new Random().nextInt(900000);
 
@@ -34,18 +34,16 @@ public class LoginPage extends AppCompatActivity {
 
         otpInput = findViewById(R.id.otp_input);
         sendOtpButton = findViewById(R.id.send_otp_button);
-        verifyOtpButton = findViewById(R.id.verify_otp_button); // Initialize the new button
+        verifyOtpButton = findViewById(R.id.verify_otp_button);
 
         sendOtpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Send the OTP via email
                 sendEmail();
                 Toast.makeText(LoginPage.this, "OTP sent to your email!", Toast.LENGTH_SHORT).show();
 
-                // Change SEND OTP to VERIFY OTP and make it visible
-                sendOtpButton.setVisibility(View.GONE); // Hide SEND OTP button
-                verifyOtpButton.setVisibility(View.VISIBLE); // Show VERIFY OTP button
+                sendOtpButton.setVisibility(View.GONE);
+                verifyOtpButton.setVisibility(View.VISIBLE);
             }
         });
 
@@ -71,7 +69,6 @@ public class LoginPage extends AppCompatActivity {
 
     // Function to send the email
     private void sendEmail() {
-        // Using AsyncTask to send the email in the background
         AsyncTask.execute(new Runnable() {
             @Override
             public void run() {

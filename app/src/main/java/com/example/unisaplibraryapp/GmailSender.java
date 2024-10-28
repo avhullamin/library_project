@@ -28,7 +28,6 @@ public class GmailSender {
         props.put("mail.smtp.host", "smtp.gmail.com");
         props.put("mail.smtp.port", "587");
 
-        // Create session with authentication
         Session session = Session.getInstance(props, new Authenticator() {
             @Override
             protected PasswordAuthentication getPasswordAuthentication() {
@@ -36,14 +35,12 @@ public class GmailSender {
             }
         });
 
-        // Create the email message
         Message message = new MimeMessage(session);
         message.setFrom(new InternetAddress(username));
         message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(recipient));
         message.setSubject(subject);
         message.setText(messageBody);
 
-        // Send the email
         Transport.send(message);
     }
 }
