@@ -1,8 +1,11 @@
 package com.example.unisaplibraryapp;
 
+import static com.example.unisaplibraryapp.MainActivity.fetchFromMySQL;
+
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -13,7 +16,15 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.Objects;
 import java.util.Random;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 import javax.mail.MessagingException;
 
 public class LoginPage extends AppCompatActivity {
@@ -25,6 +36,7 @@ public class LoginPage extends AppCompatActivity {
 
     private final int randomNumber = 100000 + new Random().nextInt(900000);
     private String userEmail;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,41 +87,27 @@ public class LoginPage extends AppCompatActivity {
         AsyncTask.execute(new Runnable() {
             @Override
             public void run() {
-                String email = readEmailFromCSV(usn);
+                String email = fetchFromMySQL(usn);
                 if (email != null) {
                     userEmail = email;
-                    sendEmail(userEmail);
+
+                    // Move UI update inside runOnUiThread()
                     runOnUiThread(() -> {
                         Toast.makeText(LoginPage.this, "OTP successfully sent to " + userEmail, Toast.LENGTH_LONG).show();
                         sendOtpButton.setVisibility(View.GONE);
                         verifyOtpButton.setVisibility(View.VISIBLE);
                     });
+
+                    sendEmail(userEmail); // Sending email can stay in the background
                 } else {
-                    runOnUiThread(() -> Toast.makeText(LoginPage.this, "USN not found in CSV", Toast.LENGTH_SHORT).show());
+                    runOnUiThread(() ->
+                            Toast.makeText(LoginPage.this, "USN not found in database", Toast.LENGTH_SHORT).show()
+                    );
                 }
             }
         });
     }
 
-    private String readEmailFromCSV(String usn) {
-        String line;
-        String[] columns;
-        try {
-            InputStream inputStream = getResources().openRawResource(R.raw.student_info);
-            BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
-
-            while ((line = reader.readLine()) != null) {
-                columns = line.split(","); // Split by comma
-                if (columns.length > 2 && columns[0].equalsIgnoreCase(usn)) { // Ensure the line has enough columns
-                    return columns[2]; // Return the email
-                }
-            }
-            reader.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return null; // USN not found
-    }
 
     private void sendEmail(String recipientEmail) {
         AsyncTask.execute(new Runnable() {
@@ -124,4 +122,5 @@ public class LoginPage extends AppCompatActivity {
             }
         });
     }
+
 }
