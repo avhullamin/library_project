@@ -16,10 +16,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="LOGIN"
-        android:textSize="36sp"
+        android:textSize="40sp"
         android:textStyle="bold"
         android:textColor="@android:color/white"
-        android:fontFamily="@font/lilg"
+        android:fontFamily="@font/gothambold"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="200dp" />
 
@@ -35,6 +35,7 @@
         android:hint="Enter USN"
         android:inputType="text"
         android:textStyle="bold"
+        android:fontFamily="@font/gothammedium"
         android:padding="12dp"
         android:paddingLeft="40dp"
         android:paddingRight="40dp"
@@ -54,6 +55,7 @@
         android:hint="Enter OTP"
         android:textStyle="bold"
         android:inputType="numberPassword"
+        android:fontFamily="@font/gothammedium"
         android:padding="12dp"
         android:paddingLeft="40dp"
         android:paddingRight="40dp"
@@ -79,7 +81,7 @@
         android:text="SEND OTP"
         android:background="@drawable/ripple_effect"
         android:textColor="@android:color/white"
-        android:fontFamily="@font/lilg"
+        android:fontFamily="@font/gothamlight"
         android:layout_below="@id/recaptcha_placeholder"
         android:layout_marginTop="30dp" />
 
@@ -107,6 +109,10 @@
         android:alpha="0.8"
         android:scaleType="centerCrop"
         android:src="@drawable/app_icon"
-        app:shapeAppearanceOverlay="@style/RoundedImage" />
+        app:shapeAppearanceOverlay="@style/RoundedImage"
+        app:strokeWidth="2dp"
+        app:strokeColor="@android:color/transparent"
+        app:cornerSize="20dp" />  <!-- Controls roundness -->
+
 
 </RelativeLayout>
