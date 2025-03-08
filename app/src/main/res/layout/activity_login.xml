@@ -54,7 +54,7 @@
         android:background="@drawable/highlighted_edittext"
         android:hint="Enter OTP"
         android:textStyle="bold"
-        android:inputType="number"
+        android:inputType="numberPassword"
         android:fontFamily="@font/gothammedium"
         android:padding="12dp"
         android:paddingLeft="40dp"
